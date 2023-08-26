@@ -771,9 +771,9 @@ def main_viewer(proxy_type, proxy, position):
         except Exception as e:
             status = quit_driver(driver=driver, data_dir=data_dir)
 
-            print(timestamp() + bcolors.FAIL +
-                  f"Worker {position} | Line : {e.__traceback__.tb_lineno} | {type(e).__name__} | {e.args[0] if e.args else ''}" + bcolors.ENDC)
-
+#            print(timestamp() + bcolors.FAIL +
+#                  f"Worker {position} | Line : {e.__traceback__.tb_lineno} | {type(e).__name__} | {e.args[0] if e.args else ''}" + bcolors.ENDC)
+            print(e)    
             create_html(
                 {"#f14c4c": f"Worker {position} | Line : {e.__traceback__.tb_lineno} | {type(e).__name__} | {e.args[0] if e.args else ''}"})
 
